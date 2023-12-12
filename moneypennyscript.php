@@ -8,13 +8,16 @@ class PlgSystemMoneypennyscript extends CMSPlugin
 {
     public function onBeforeCompileHead()
     {
-        $document = Factory::getDocument();
+        $app = Factory::getApplication();
 
-        // Retrieve the script from the plugin parameters
-        $script = $this->params->get('script', '');
+        // Check if we are in the site application (frontend)
+        if ($app->isClient('site')) {
+            $document = Factory::getDocument();
+            $script = $this->params->get('script', '');
 
-        if (!empty($script)) {
-            $document->addScriptDeclaration($script);
+            if (!empty($script)) {
+                $document->addScriptDeclaration($script);
+            }
         }
     }
 }
