@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="system" method="upgrade">
+    <name>System - Moneypenny Script</name>
+    <author>Russell English</author>
+    <version>1.0.0</version>
+    <description>This plugin adds Moneypenny script to all pages.</description>
+    <files>
+        <filename plugin="moneypennyscript">moneypennyscript.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="script" type="textarea" default="" label="Script" description="Paste your script here" rows="10" cols="50" filter="raw"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
